@@ -11,6 +11,5 @@ namespace PersonDataManagement
         public string address;
         public int age;
         public int SSN;
-
     }
 }

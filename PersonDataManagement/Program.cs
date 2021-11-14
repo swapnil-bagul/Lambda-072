@@ -17,6 +17,7 @@ namespace PersonDataManagement
             GetTopTwoRecordAgeLessThan60(list);
             AgeLessThan18(list);
             GetAverageAge(list);
+            NamePresentOrNot(list, "swapnil");
             
            
         }
@@ -74,6 +75,24 @@ namespace PersonDataManagement
             var result = list.Average<Person>(person => person.age);
             Console.WriteLine(result);
             
+        }
+
+        //person is present or not
+        public static void NamePresentOrNot(List<Person> list ,string present)
+        {
+            //create object
+            var personObj = list.Find(person => person.name == present);
+
+            if (personObj !=null  )
+            {
+                Console.WriteLine(" Person Is Present \n Name: {0}  Address: {1}", personObj.name, personObj.address);
+            }
+            else
+            {
+                Console.WriteLine("Person Is Not Present");
+            }
+            
+          
         }
     }
 }
