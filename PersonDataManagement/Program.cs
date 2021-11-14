@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PersonDataManagement
 {
@@ -13,6 +14,7 @@ namespace PersonDataManagement
             //call Static Method
             AddDetailsInList(list);
             GetDatails(list);
+            GetTopTwoRecordAgeLessThan60(list);
             
            
         }
@@ -46,6 +48,13 @@ namespace PersonDataManagement
                 Console.WriteLine("List Is Empty");
             }
 
+        }
+        //get Top Two Person Age lass than 60
+        public static void GetTopTwoRecordAgeLessThan60(List <Person > list)
+        {
+            List<Person> result = list.FindAll(perosn => perosn.age < 60).OrderByDescending (person => person.age).Take (2).ToList ();
+            Console .WriteLine ("Top Two Person Age lass than 60 ");
+            GetDatails(result);
         }
     }
 }
