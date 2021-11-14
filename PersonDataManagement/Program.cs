@@ -16,6 +16,7 @@ namespace PersonDataManagement
             GetDatails(list);
             GetTopTwoRecordAgeLessThan60(list);
             AgeLessThan18(list);
+            GetAverageAge(list);
             
            
         }
@@ -50,20 +51,29 @@ namespace PersonDataManagement
             }
 
         }
-        //get Top Two Person Age lass than 60
+        //get Top Two Person Age less than 60
         public static void GetTopTwoRecordAgeLessThan60(List <Person > list)
         {
             List<Person> result = list.FindAll(perosn => perosn.age < 60).OrderByDescending (person => person.age).Take (2).ToList ();
-            Console .WriteLine ("Top Two Person Age lass than 60 ");
+            Console .WriteLine ("Top Two Person Age less than 60 ");
             GetDatails(result);
         }
 
-        // Person Age lass than 18
+        // Person Age less than 18
         public static void AgeLessThan18(List<Person> list)
         {
             List<Person> result = list.FindAll(perosn => perosn.age < 18).ToList();
-            Console.WriteLine(" Person Age lass than 18 ");
+            Console.WriteLine("Person Age less than 18 ");
             GetDatails(result);
+        }
+
+        //find Average age
+        public static void GetAverageAge(List<Person> list)
+        {
+            Console.WriteLine("Average Age ");
+            var result = list.Average<Person>(person => person.age);
+            Console.WriteLine(result);
+            
         }
     }
 }
