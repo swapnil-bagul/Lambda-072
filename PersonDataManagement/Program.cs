@@ -5,14 +5,18 @@ namespace PersonDataManagement
 {
     class Program
     {
+        //Main Method
         static void Main(string[] args)
         {
+            //Create List
             List<Person> list = new List<Person>();
-            Program.AddDetailsInList(list);
+            //call Static Method
+            AddDetailsInList(list);
             GetDatails(list);
             
-            Console.WriteLine("Hello World!");
+           
         }
+        //Adding Person Details in List
         public static void AddDetailsInList(List<Person > list)
         {
 
@@ -24,16 +28,24 @@ namespace PersonDataManagement
             list.Add(new Person() { name = "kasam", address = "navapur", age = 56, SSN = 6 });
 
         }
+        //Printing Person Details
         public static void GetDatails(List<Person> list)
         {
+            //Programming Construct
             if (list != null)
             {
+                // //Programming Construct
                 foreach (var item in list)
                 {
                     Console.WriteLine("SSN: {0} | Name: {1} | Address: {2} | Age: {3}",item.SSN ,item .name ,item .address ,item .age );
                 }
 
             }
+            else
+            {
+                Console.WriteLine("List Is Empty");
+            }
+
         }
     }
 }

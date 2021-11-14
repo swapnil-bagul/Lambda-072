@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PersonDataManagement
 {
+    //Create Person Class
     public class Person
     {
         public string name;
